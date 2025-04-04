@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
 
@@ -15,12 +15,12 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm ci
-      
+      - run: npm install
+
       - run: npm run build
-      
+
       - run: npm run export
-      
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
